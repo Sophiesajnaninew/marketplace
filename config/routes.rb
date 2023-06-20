@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
   root 'main#home'
   get '/home', to: 'main#home'
   get '/spaces', to: 'main#spaces'
