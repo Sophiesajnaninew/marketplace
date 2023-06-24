@@ -67,4 +67,12 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  # Action Mailer
+  config.action_mailer.default_url_options = { host: '127.0.0.1:3000' } # for absolute urls in email
+  #config.action_mailer.asset_host = "http://127.0.0.1:3000" # for image URLs in HTML email
+  #for letter opener 
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  # Allow generating absolute urls with routing url helpers.
+  #Rails.application.routes.default_url_options[:host] = '127.0.0.1:3000'
 end

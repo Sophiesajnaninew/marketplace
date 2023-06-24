@@ -44,7 +44,14 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+#Authentication 
 gem 'devise'
+gem 'omniauth-google-oauth2'
+gem 'omniauth'
+gem 'activerecord-session_store'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -54,12 +61,13 @@ gem 'devise'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "pry-rails", "~> 0.3.9"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem "letter_opener"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -73,3 +81,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+

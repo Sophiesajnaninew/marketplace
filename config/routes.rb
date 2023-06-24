@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-  root 'main#home'
-  get '/home', to: 'main#home'
-  get '/spaces', to: 'main#spaces'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  root to: 'static_pages#home'
+
+
+  #default_url_options Rails.application.config.action_mailer.default_url_options
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
