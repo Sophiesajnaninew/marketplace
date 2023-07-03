@@ -1,14 +1,35 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :bigint           not null, primary key
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  provider               :string
+#  uid                    :string
+#  name                   :string
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string
+#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable  
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :validatable,
-         :confirmable,  
-         :lockable, :timeoutable, :trackable, 
+        # :confirmable,  
+         :lockable, :timeoutable, #:trackable, 
          :omniauthable
+  has_many :listings, foreign_key: :host_id
 
   attr_accessor :confirmed_at, :locked_at, :confirmation_token,
-  :confirmation_sent_at, :unconfirmed_email, :current_sign_in_at, 
+  :confirmation_sent_at, :unconfirmed_email, :current_sign_in_at, :last_sign_in_at
 
   def self.new_with_session(params, session)
     super.tap do |user|

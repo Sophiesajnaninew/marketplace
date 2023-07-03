@@ -14,17 +14,17 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '80e724ee0de1cc8e81dd680a5ed7b448d9803ebd12a2300ae93515b15850e0e8c4a75ccc316ebb35daaf263e113c24c9f4d19b667984b9a72d1e3beb541df692'
+  #config.secret_key = '80e724ee0de1cc8e81dd680a5ed7b448d9803ebd12a2300ae93515b15850e0e8c4a75ccc316ebb35daaf263e113c24c9f4d19b667984b9a72d1e3beb541df692'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
+  #config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'sophiesajnani@bellevuebites.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -143,7 +143,7 @@ Devise.setup do |config|
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
+  #config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -314,7 +314,7 @@ Devise.setup do |config|
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
-
+  #config.allow_insecure_token_lookup = true
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is

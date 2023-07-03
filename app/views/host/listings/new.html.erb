@@ -1,0 +1,14 @@
+<h1>List your shop or restaurant space</h1>
+<% if flash[:errors]%>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <%end %>
+<%end%>
+<form action="/host/listings" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="title">Title</label>
+  <input type ="text" name="listing[title]" id="title" value="<%= @listing.title %>">
+  <label for="about">About</label>
+  <textarea id="about" name="listing[about]"><%= @listing.about %></textarea>
+  <input type="submit" value="Create listing">
+</form>

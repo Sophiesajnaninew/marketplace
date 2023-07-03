@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
   root to: 'static_pages#home'
+  
+  namespace :host do
+    resources :listings #routes to listings 
+  end
 
+  devise_for :users, controllers: { 
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    #confirmations: 'users/confirmations'
+  }
 
   #default_url_options Rails.application.config.action_mailer.default_url_options
 
