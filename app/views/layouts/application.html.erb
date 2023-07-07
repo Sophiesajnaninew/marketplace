@@ -7,10 +7,23 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <!-- define the initMap function 
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google[:maps] %>&libraries=places&callback=initMap" defer data-turbolinks-eval="false"></script>
+  <script type="text/javascript">
+  function initMap() {
+        console.log('at maps'); 
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 10,
+                    center: { lat: -34.397, lng: 150.644 }
+                });
+    }
+    </script>
+    -->
   </head>
   <body>
     <p class="notice"><%= notice%></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <div id="map"></div>
   </body>
 </html>

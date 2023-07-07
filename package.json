@@ -1,10 +1,13 @@
 {
   "name": "app",
   "private": "true",
+  "type": "module",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@hotwired/turbo-rails": "^7.3.0",
     "@popperjs/core": "^2.11.8",
+    "@rails/webpacker": "5.4.4",
     "autoprefixer": "^10.4.14",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
@@ -12,7 +15,8 @@
     "nodemon": "^2.0.22",
     "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.63.4"
+    "sass": "^1.63.4",
+    "webpack": "^4.46.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
@@ -23,5 +27,9 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3"
+  }
 }
